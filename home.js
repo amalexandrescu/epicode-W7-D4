@@ -17,7 +17,7 @@ async function getProducts() {
 
 function renderProducts(listOfProducts) {
   let list = document.querySelector("ul.list-group");
-  listOfProducts.forEach(({ name, price, _id }, index) => {
+  listOfProducts.forEach(({ name, price, _id, description }, index) => {
     const productLi = document.createElement("li");
     productLi.classList.add("list-group-item");
     productLi.innerHTML = `<div class="row px-3 align-items-center">
@@ -30,29 +30,6 @@ function renderProducts(listOfProducts) {
     list.appendChild(productLi);
   });
 }
-
-// const newProduct = {
-//   name: "lilies",
-//   description: "beautiful lilis bouquet",
-//   brand: "bloom",
-//   imageUrl:
-//     "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.arenaflowers.com%2Fproducts%2Fscented-double-lilies%2F&psig=AOvVaw0cwcGcugmwStooy6M2gG95&ust=1668175218514000&source=images&cd=vfe&ved=0CA8QjRxqGAoTCNis1JHjo_sCFQAAAAAdAAAAABCeAQ",
-//   price: 10,
-// };
-
-// const optionsPost = {
-//   method: "POST",
-//   body: JSON.stringify(newProduct),
-//   headers: {
-//     "Content-Type": "application/json",
-//   },
-// };
-
-// async function postProducts() {
-//   const postResponse = await fetch(url, optionsPost);
-//   const product = await postResponse.json();
-//   console.log(product);
-// }
 
 window.onload = async () => {
   const products = await getProducts();

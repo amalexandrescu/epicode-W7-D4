@@ -68,5 +68,5 @@ async function onDelete() {
 }
 
 function onEdit() {
-  window.location.assign(`backoffice.html?productId=${productId}`);
+  window.location.assign(`edit.html?productId=${productId}`);
 }
